@@ -23,15 +23,10 @@
 		<a class="waves-effect waves-button" href="javascript:;" onclick="createAction()"><i class="zmdi zmdi-plus"></i> 新增部门</a>
 		<a class="waves-effect waves-button" href="javascript:;" onclick="updateAction()"><i class="zmdi zmdi-edit"></i> 修改部门</a>
 		<a class="waves-effect waves-button" href="javascript:;" onclick="deleteAction()"><i class="zmdi zmdi-close"></i> 删除部门</a>		
-		<input class="form-control2" style="width:100px" id="inputa" placeholder="部门编号">
-		<input class="form-control2" style="width:100px" id="inputb" placeholder="名称">
-		<input class="form-control2" style="width:100px" id="inputc" placeholder="类型">
-
-			<select class="form-control2">
-				<option disabled>(请选择岗位类型)</option>
-				<option>公司</option>
-				<option>部门</option>
-			</select>  
+		<input class="form-control2" style="width:100px" id="dnumSearch" placeholder="部门编号">
+		<input class="form-control2" style="width:100px" id="dnameSearch" placeholder="名称">
+		<input class="form-control2" style="width:100px" id="typeSearch" placeholder="名称">
+<%--		<input class="form-control2" style="width:100px" id="typeSearch" placeholder="类型">--%>
 
 			<a class="waves-effect waves-button" href="javascript:;" onclick="Search()"><i class="zmdi zmdi-search"></i> 查找</a>
 	</div>
@@ -187,23 +182,20 @@ function detailFormatter(index, row) {
 }
 
 function Search() {
-	var dname1= $('#dname123').val();
-	var ycid = $("input:hidden[name='dname123']").val();
-	//var dnum1= $('#dnumInput').val();
-	var dnum1=document.getElementById("dname");
-	console.log("123123123123123");
-	console.log(dname1);
-	$('#createDialog').bootstrapTable(
-			{
-				method:'get',
-				url:'DepartmentAdd',
+	var dname= $('#dnameSearch').val();
+	var dnum= $('#dnumSearch').val();
+	var type= $('#typeSearch').val();
+	console.log(dnum);
 
-				queryParams: {
-					Dname:dname1,
-					Dnum:dnum1
-				}
+	$('#table').bootstrapTable('refresh',
+			{
+				url:'Department?dname='+dname+'&'+
+						'dnum='+dnum+'&'+
+						'type='+type
 			}
-	)
+
+	);
+	//window.location.href = "temp";
 
 }
 
@@ -262,7 +254,6 @@ function updateAction() {
 	} else {
 
 		window.location.href="departmentManagementAdd.jsp?"+"" +
-				"dnum="+rows[0].dnum+"&"+
 				"dname="+rows[0].dname+"&"+
 				"type="+rows[0].type+"&"+
 				"phone="+rows[0].phone+"&"+
@@ -326,51 +317,7 @@ function deleteAction() {
 				}
 			}
 		});
-		$("#table").bootstrapTable('destroy');//销毁
-		$("#table").bootstrapTable({//刷新
-			url: 'Department',
-			height: getHeight(),
-			striped: true,
-			search: false,
-			searchOnEnterKey: false,
-			showRefresh: false,
-			showToggle: false,
-			showColumns: false,
-			minimumCountColumns: 2,
-			showPaginationSwitch: false,
-			clickToSelect: true,
-			detailView: true,
-			detailFormatter: 'detailFormatter',
-			pagination: true,
-			paginationLoop: false,
-			classes: 'table table-hover table-no-bordered',
-			//sidePagination: 'server',
-			//silentSort: false,
-			smartDisplay: false,
-			idField: 'id',
-			sortName: 'id',
-			sortOrder: 'desc',
-			escape: true,
-			searchOnEnterKey: true,
-			idField: 'systemId',
-			maintainSelected: true,
-			toolbar: '#toolbar',
-			columns: [
-				{field: 'state', checkbox: true},
-				{field: 'dnum', title: '编号', sortable: true, halign: 'center'},
-				{field: 'dname', title: '名称', sortable: true, halign: 'center'},
-				{field: 'type', title: '类型', sortable: true, halign: 'center'},
-				{field: 'phone', title: '电话', sortable: true, halign: 'center'},
-				{field: 'fax', title: '传真', sortable: true, halign: 'center'},
-				{field: 'des', title: '描述', sortable: true, halign: 'center'},
-				{field: 'parent', title: '上级部门', sortable: true, halign: 'center'},
-				{field: 'establishDate', title: '成立时间', sortable: true, halign: 'center'},
-				{field: 'action', title: '操作', halign: 'center', align: 'center', formatter: 'actionFormatter', events: 'actionEvents', clickToSelect: false}
-			]
-		}).on('all.bs.table', function (e, name, args) {
-			$('[data-toggle="tooltip"]').tooltip();
-			$('[data-toggle="popover"]').popover();
-		});
+		window.location.href = "temp";
 	}
 }
 </script>

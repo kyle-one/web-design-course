@@ -28,19 +28,13 @@ public class departmentController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-//        String did = req.getParameter("did");
-//        String dname = req.getParameter("dname");
-//        String sid = req.getParameter("sid");
-//        String sname = req.getParameter("sname");
-//        resp.setContentType("text/html;charset=utf-8");//设置uft-8编码
-        //sid = "00000001";
-        //sname = "方辰宇";
-        //System.out.println(did);
-        //System.out.println(dname);
-        //System.out.println(sid);
-        //System.out.println(sname);
         resp.setContentType("text/html;charset=utf-8");//设置uft-8编码
+
+        String dname=req.getParameter("dname");
+        String dnum=req.getParameter("dnum");
+        String type=req.getParameter("type");
+        System.out.println(dnum+dname+type);
+
 
         List<Post> postList;
         List<Department> departmentList;
@@ -52,7 +46,11 @@ public class departmentController extends HttpServlet {
 //        postList = pd.getAllPost();
 //        departmentList = dd.getAllDepartment();
         //staffList = sd.getByDidAndDnameAndSidAndSname(did,dname,sid,sname);
-        departmentList= dd.getAllDepartment();
+        departmentList= dd.getByDnumAndDnameAndType(dnum,dname,type);
+        //departmentList= dd.getAllDepartment();
+
+
+
         /*
         for(Staff staff:staffList){
             for(Department department:departmentList){
