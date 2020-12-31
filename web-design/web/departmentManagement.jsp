@@ -98,6 +98,7 @@
 
 <script src="resources/js/common.js"></script>
 <script>
+
 var $table = $('#table');
 $(function() {
 	$(document).on('focus', 'input[type="text"]', function() {
@@ -151,9 +152,10 @@ $(function() {
 		]
 	}).on('all.bs.table', function (e, name, args) {
 		$('[data-toggle="tooltip"]').tooltip();
-		$('[data-toggle="popover"]').popover();  
+		$('[data-toggle="popover"]').popover();
 	});
 });
+
 function actionFormatter(value, row, index) {
     return [
         '<a class="like" href="javascript:void(0)" data-toggle="tooltip" title="Like"><i class="glyphicon glyphicon-heart"></i></a>　',
@@ -208,44 +210,46 @@ function Search() {
 
 // 新增
 function createAction() {
-	window.location = "departmentManagementAdd.jsp";
+	window.location.href = "departmentManagementAdd.jsp";
 }
 
-function Update() {
-	var rows = $table.bootstrapTable('getSelections');
-	var i=0;
-	var s="";
-	for(i=0;i<rows.length;i++){
-		s=s+rows[i].dnum;
-		s+=','
-	}
-	//rows=rows[0].dname;
-	var a="123"
-	console.log(s);
-	$('#createDialog').bootstrapTable(
-			{
-				method:'get',
-				url:'DepartmentUpdate',
-				queryParams: {
-					abc:s,
-					a:a
-				}
-			}
-	)
-}
+// function Update() {
+// 	var rows = $table.bootstrapTable('getSelections');
+// 	var i=0;
+// 	var s="";
+// 	for(i=0;i<rows.length;i++){
+// 		s=s+rows[i].dnum;
+// 		s+=','
+// 	}
+// 	//rows=rows[0].dname;
+// 	var a="123"
+// 	console.log(s);
+// 	$('#createDialog').bootstrapTable(
+// 			{
+// 				method:'get',
+// 				url:'DepartmentUpdate',
+// 				queryParams: {
+// 					abc:s,
+// 					a:a
+// 				}
+// 			}
+// 	)
+
 
 
 
 // 编辑
 function updateAction() {
 	var rows = $table.bootstrapTable('getSelections');
+	console.log(rows);
 
 
 
-	if (rows.length == 0) {
+
+	if (rows.length ==0 || rows.length>1) {
 		$.confirm({
 			title: false,
-			content: '请至少选择一条记录！',
+			content: '请选择一条记录！',
 			autoClose: 'cancel|3000',
 			backgroundDismiss: true,
 			buttons: {
@@ -257,31 +261,43 @@ function updateAction() {
 		});
 	} else {
 
-		Update();
+		window.location.href="departmentManagementAdd.jsp?"+"" +
+				"dnum="+rows[0].dnum+"&"+
+				"dname="+rows[0].dname+"&"+
+				"type="+rows[0].type+"&"+
+				"phone="+rows[0].phone+"&"+
+				"establishDate="+rows[0].establishDate+"&"+
+				"des="+rows[0].des+"&"+
+				"parent="+rows[0].parent+"&"+
+				"fax="+rows[0].fax+"&";
+		//Update();
 
-
-		// $.confirm({
-		// 	type: 'blue',
-		// 	animationSpeed: 300,
-		// 	title: '编辑系统',
-		// 	content: $('#createDialog').html(),
-		// 	buttons: {
-		// 		confirm: {
-		// 			text: '确认',
-		// 			btnClass: 'waves-effect waves-button',
-		// 			action: function () {
-		// 				$.alert('确认');
-		// 			}
-		// 		},
-		// 		cancel: {
-		// 			text: '取消',
-		// 			btnClass: 'waves-effect waves-button'
-		// 		}
-		// 	}
-		// });
 	}
 }
 // 删除
+
+function Delete() {
+	var rows = $table.bootstrapTable('getSelections');
+	var i=0;
+	var s="";
+	for(i=0;i<rows.length;i++){
+		s=s+rows[i].dnum;
+		s+=','
+	}
+	//rows=rows[0].dname;
+	console.log(s);
+	$('#createDialog').bootstrapTable(
+			{
+				method:'get',
+				url:'DepartmentDelete',
+				queryParams: {
+					dnumList:s,
+				}
+			}
+	)
+}
+
+
 function deleteAction() {
 	var rows = $table.bootstrapTable('getSelections');
 	if (rows.length == 0) {
@@ -298,28 +314,62 @@ function deleteAction() {
 			}
 		});
 	} else {
+		Delete();
 		$.confirm({
-			type: 'red',
-			animationSpeed: 300,
-			title: false,
-			content: '确认删除该系统吗？',
+			title: "删除成功！",
+			content: '删除成功！',
+			backgroundDismiss: true,
 			buttons: {
-				confirm: {
-					text: '确认',
-					btnClass: 'waves-effect waves-button',
-					action: function () {
-						var ids = new Array();
-						for (var i in rows) {
-							ids.push(rows[i].systemId);
-						}
-						$.alert('删除：id=' + ids.join("-"));
-					}
-				},
-				cancel: {
-					text: '取消',
+				yes: {
+					text: '确定',
 					btnClass: 'waves-effect waves-button'
 				}
 			}
+		});
+		$("#table").bootstrapTable('destroy');//销毁
+		$("#table").bootstrapTable({//刷新
+			url: 'Department',
+			height: getHeight(),
+			striped: true,
+			search: false,
+			searchOnEnterKey: false,
+			showRefresh: false,
+			showToggle: false,
+			showColumns: false,
+			minimumCountColumns: 2,
+			showPaginationSwitch: false,
+			clickToSelect: true,
+			detailView: true,
+			detailFormatter: 'detailFormatter',
+			pagination: true,
+			paginationLoop: false,
+			classes: 'table table-hover table-no-bordered',
+			//sidePagination: 'server',
+			//silentSort: false,
+			smartDisplay: false,
+			idField: 'id',
+			sortName: 'id',
+			sortOrder: 'desc',
+			escape: true,
+			searchOnEnterKey: true,
+			idField: 'systemId',
+			maintainSelected: true,
+			toolbar: '#toolbar',
+			columns: [
+				{field: 'state', checkbox: true},
+				{field: 'dnum', title: '编号', sortable: true, halign: 'center'},
+				{field: 'dname', title: '名称', sortable: true, halign: 'center'},
+				{field: 'type', title: '类型', sortable: true, halign: 'center'},
+				{field: 'phone', title: '电话', sortable: true, halign: 'center'},
+				{field: 'fax', title: '传真', sortable: true, halign: 'center'},
+				{field: 'des', title: '描述', sortable: true, halign: 'center'},
+				{field: 'parent', title: '上级部门', sortable: true, halign: 'center'},
+				{field: 'establishDate', title: '成立时间', sortable: true, halign: 'center'},
+				{field: 'action', title: '操作', halign: 'center', align: 'center', formatter: 'actionFormatter', events: 'actionEvents', clickToSelect: false}
+			]
+		}).on('all.bs.table', function (e, name, args) {
+			$('[data-toggle="tooltip"]').tooltip();
+			$('[data-toggle="popover"]').popover();
 		});
 	}
 }

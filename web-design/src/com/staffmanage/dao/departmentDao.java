@@ -12,7 +12,7 @@ public interface departmentDao {
     void queryDepartment(Department dep);
 
     //删除部门
-    void deleteDepartment(Department dep);
+    void deleteDepartment(String[] dnumList);
 
     //获取所有部门
     List<Department> getAllDepartment();

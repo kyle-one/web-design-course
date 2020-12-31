@@ -26,49 +26,69 @@
 <body>
 <div style="padding: 30px 20%;">
     <p>
-    <h4>新增部门</h4>
+    <h4>输入部门基本信息</h4>
+    <br>
+<%--    <h4>--%>
+<%--        <%--%>
+<%--            String str1=request.getParameter("dnum");--%>
+
+<%--        %>--%>
+<%--        123:<%=str1%>--%>
+<%--    </h4>--%>
+    <%
+        String dname=request.getParameter("dname");
+        String dnum=request.getParameter("dnum");
+        String type=request.getParameter("type");
+        String phone=request.getParameter("phone");
+        String fax=request.getParameter("fax");
+        String des=request.getParameter("des");
+        String parent=request.getParameter("parent");
+        String establishDate=request.getParameter("establishDate");
+    %>
+
+
     </p>
     <div id="createDialog" class="crudDialog">
         <form id="newForm" action="${pageContext.request.contextPath }/DepartmentAdd" method="post">
 <%--    <form >--%>
             <div class="form-group">
-                <label for="dnum">编号（必填）</label>
-                <input id="dnum" name="dnum" type="text" class="form-control">
+                <label for="dnum" class="active">编号（必填）</label>
+                <input id="dnum" name="dnum" type="text" value=<%=dnum%> class="form-control">
             </div>
             <div class="form-group">
-                <label for="dname">名称（必填）</label>
-                <input id="dname"  name="dname" type="text" class="form-control">
+                <label for="dname" class="active">名称（必填）</label>
+                <input id="dname"  name="dname" type="text" value=<%=dname%> class="form-control">
             </div>
 <%--            <div class="form-group">--%>
 <%--                <label for="type">类型（必填）</label>--%>
 <%--                <input id="type" name="type" type="text" class="form-control">--%>
 <%--            </div>--%>
             <div class="form-group">
-                <label for="phone">电话（必填）</label>
-                <input id="phone" name="phone" type="text" class="form-control">
+                <label for="phone" class="active">电话（必填）</label>
+                <input id="phone" name="phone" type="text"value=<%=phone%> class="form-control">
             </div>
 
             <div class="form-group">
-                <label for="fax">传真</label>
-                <input id="fax" type="text" name="fax" class="form-control">
+                <label for="fax" class="active">传真</label>
+                <input id="fax" type="text" name="fax" value=<%=fax%> class="form-control">
             </div>
 
             <div class="form-group">
-                <label for="des">描述</label>
-                <input id="des" name="des" type="text" class="form-control">
+                <label for="des" class="active">描述</label>
+                <input id="des" name="des" type="text" value=<%=des%> class="form-control">
             </div>
 
             <div class="form-group">
-                <label for="parent">上级部门</label>
-                <input id="parent" name="parent" type="text" class="form-control">
+                <label for="parent" class="active">上级部门</label>
+                <input id="parent" name="parent" type="text" value=<%=parent%> class="form-control">
             </div>
             <div class="form-group">
                 <label for="establishDate" class="active">成立时间（必填）</label>
-                <input id="establishDate" name="establishDate" type="date" class="form-control">
+                <input id="establishDate" name="establishDate" type="date" value=<%=establishDate%> class="form-control">
             </div>
 
             <div class="form-group">
-                <select class="form-control" name="type" id="type">
+                <select class="form-control" name="type" ng-value=<%=type%> id="type">
                     <option disabled>(请选择类型)</option>
                     <option>公司</option>
                     <option>部门</option>
@@ -76,7 +96,7 @@
             </div>
 <%--            <input type="submit">--%>
 
-            <a class="waves-effect waves-button" href="javascript:;" onclick="Sure()"><i class="zmdi zmdi-seat"></i> 查找</a>
+            <a class="waves-effect waves-button" href="javascript:;" onclick="Sure()"><i class="zmdi zmdi-seat"></i> 提交</a>
 
 
         </form>
@@ -99,6 +119,7 @@
 
 
 <script>
+
 
     function Sure() {
         if(checkEmpty1()==0){

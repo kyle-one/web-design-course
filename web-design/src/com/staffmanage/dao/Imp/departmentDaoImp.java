@@ -55,7 +55,33 @@ public class departmentDaoImp implements departmentDao {
     }
 
     @Override
-    public void deleteDepartment(Department dep) {
+    public void deleteDepartment(String[] dnumList) {
+        Connection conn=null;//建立连接
+        PreparedStatement pstmt=null;//查询
+        //ResultSet rs=null;//查询结果
+
+        try {
+            conn= DbUtils.getConnection();//建立连接
+            System.out.println("conn:"+conn);
+            //String sql="select  *  from department";
+            for(int i=0;i<dnumList.length;i++){
+                String sql="delete from department where dnum = ?";
+                //String sql="insert into department(dnum,dname,type,phone,des,parent,establishDate,fax) values(?,?,?,?,?,?,?,?)";
+                pstmt=conn.prepareStatement(sql);
+                pstmt.setString(1,dnumList[i]);
+                pstmt.executeUpdate();
+            }
+
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch blockD
+            e.printStackTrace();
+        }finally
+        {
+            DbUtils.closeStatement(pstmt);
+            DbUtils.closeConnection();
+        }
+
 
     }
 

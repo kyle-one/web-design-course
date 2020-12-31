@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/DepartmentUpdate")
-public class departmentUpdate extends HttpServlet {
+@WebServlet("/DepartmentDelete")
+public class departmentDelete extends HttpServlet {
     Gson gson = new Gson();
 
     @Override
@@ -23,8 +23,15 @@ public class departmentUpdate extends HttpServlet {
 
         resp.setContentType("text/html;charset=utf-8");//设置uft-8编码
         req.setCharacterEncoding("UTF-8");
-        System.out.println(req.getParameter("abc"));
-        System.out.println(req.getParameter("a"));
+        //List<String> dnumList;
+        String[] dnumList=req.getParameter("dnumList").split(",");
+        for(int i=0;i<dnumList.length;i++){
+            System.out.println(dnumList[i]);
+        }
+
+        departmentDao dDao=new departmentDaoImp();
+        dDao.deleteDepartment(dnumList);
+
 //        Department dp= new Department();
 //
 //        dp.setDnum(req.getParameter("dnum"));
