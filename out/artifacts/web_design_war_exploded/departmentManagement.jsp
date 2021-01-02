@@ -256,7 +256,7 @@ function searchAction() {
 	} else {
 		console.log(rows[0].dnum);
 
-		window.location.href="employeeTurnoverManagement.jsp?"+"" +
+		window.location.href="departmentSearch.jsp?"+"" +
 				"dnameFromDep="+rows[0].dname
 		//dnameFromDep=row.dname
 		//Update();
@@ -289,7 +289,8 @@ function updateAction() {
 	} else {
 		console.log(rows[0].dnum);
 
-		window.location.href="departmentManagementAdd.jsp?"+"" +
+		window.location.href="departmentManagementUpdate.jsp?"+"" +
+				"dnum="+rows[0].dnum+"&"+
 				"dname="+rows[0].dname+"&"+
 				"type="+rows[0].type+"&"+
 				"phone="+rows[0].phone+"&"+

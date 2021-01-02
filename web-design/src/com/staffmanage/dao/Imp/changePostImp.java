@@ -143,6 +143,11 @@ public class changePostImp implements changeDepartmentDao, departmentDao, postDa
     }
 
     @Override
+    public void updateDepartment(Department dep) {
+
+    }
+
+    @Override
     public List<Post> getAllPost() {
         Connection conn=null;
         PreparedStatement pstmt=null;
@@ -177,4 +182,26 @@ public class changePostImp implements changeDepartmentDao, departmentDao, postDa
         }
         return  posts;
     }
+
+    @Override
+    public List<Post> getPostByPnumAndPnameAndType(String pnum, String pname, String type) {
+        return null;
+    }
+
+    @Override
+    public void addPost(Post p) {
+
+    }
+
+    @Override
+    public void deletePost(String[] pnumList) {
+
+    }
+
+    @Override
+    public void updatePost(Post p) {
+
+    }
+
+
 }

@@ -1,5 +1,7 @@
 package com.staffmanage.controller;
 import com.google.gson.Gson;
+import com.staffmanage.dao.Imp.postDaoImp;
+import com.staffmanage.dao.postDao;
 import com.staffmanage.entity.Department;
 import com.staffmanage.dao.departmentDao;
 import com.staffmanage.dao.Imp.departmentDaoImp;
@@ -14,8 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/DepartmentAdd")
-public class departmentAdd extends HttpServlet {
+@WebServlet("/PostDelete")
+public class postDelete extends HttpServlet {
     Gson gson = new Gson();
 
     @Override
@@ -23,25 +25,14 @@ public class departmentAdd extends HttpServlet {
 
         resp.setContentType("text/html;charset=utf-8");//设置uft-8编码
         req.setCharacterEncoding("UTF-8");
-        Department dp= new Department();
+        String[] pnumList=req.getParameter("pnumList").split(",");
+        for(int i=0;i<pnumList.length;i++){
+            System.out.println(pnumList[i]);
+        }
+        postDao pDao=new postDaoImp();
+        pDao.deletePost(pnumList);
+        req.getRequestDispatcher("postManagement.jsp").forward(req,resp);
 
-        dp.setDnum(req.getParameter("dnum"));
-        dp.setDname(req.getParameter("dname"));
-        dp.setType(req.getParameter("type"));
-        dp.setParent(req.getParameter("parent"));
-        dp.setFax(req.getParameter("fax"));
-        dp.setDes(req.getParameter("des"));
-        dp.setPhone(req.getParameter("phone"));
-        dp.setEstablishDate(req.getParameter("establishDate"));
-
-        departmentDao dDao=new departmentDaoImp();
-        dDao.addDepartment(dp);
-
-
-        System.out.println(dp.getDname()+dp.getDnum()+dp.getEstablishDate()+dp.getType());
-
-
-        req.getRequestDispatcher("departmentManagement.jsp").forward(req,resp);
 
     }
 

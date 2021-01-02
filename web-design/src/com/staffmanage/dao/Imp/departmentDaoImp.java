@@ -196,4 +196,41 @@ public class departmentDaoImp implements departmentDao {
         }
         return  deps;
     }
+
+    @Override
+    public void updateDepartment(Department dep) {
+        Connection conn=null;//建立连接
+        PreparedStatement pstmt=null;//查询
+        //ResultSet rs=null;//查询结果
+
+        try {
+            conn= DbUtils.getConnection();//建立连接
+            System.out.println("conn:"+conn);
+            //String sql="select  *  from department";
+
+            String sql="update department set dname=? , type=? , phone=? , des=? , parent=? , establishDate=? , fax=? where dnum = ?";
+            System.out.println(sql);
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1,dep.getDname());
+            pstmt.setString(2,dep.getType());
+            pstmt.setString(3,dep.getPhone());
+            pstmt.setString(4,dep.getDes());
+            pstmt.setString(5,dep.getParent());
+            pstmt.setString(6,dep.getEstablishDate());
+            pstmt.setString(7,dep.getFax());
+            pstmt.setString(8,dep.getDnum());
+
+            pstmt.executeUpdate();
+
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch blockD
+            e.printStackTrace();
+        }finally
+        {
+            DbUtils.closeStatement(pstmt);
+            DbUtils.closeConnection();
+        }
+
+    }
 }

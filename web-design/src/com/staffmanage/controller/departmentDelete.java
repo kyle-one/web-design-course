@@ -32,74 +32,10 @@ public class departmentDelete extends HttpServlet {
         departmentDao dDao=new departmentDaoImp();
         dDao.deleteDepartment(dnumList);
 
-//        Department dp= new Department();
-//
-//        dp.setDnum(req.getParameter("dnum"));
-//        dp.setDname(req.getParameter("dname"));
-//        dp.setType(req.getParameter("type"));
-//        dp.setParent(req.getParameter("parent"));
-//        dp.setFax(req.getParameter("fax"));
-//        dp.setDes(req.getParameter("des"));
-//        dp.setPhone(req.getParameter("phone"));
-//        dp.setEstablishDate(req.getParameter("establishDate"));
-//
-//        departmentDao dDao=new departmentDaoImp();
-//        dDao.addDepartment(dp);
-//
-//
-//        System.out.println(dp.getDname()+dp.getDnum()+dp.getEstablishDate()+dp.getType());
-//
-
 
         //System.out.println("gfdgfdgfd:"+dname);
         req.getRequestDispatcher("departmentManagement.jsp").forward(req,resp);
 
-
-//        String did = req.getParameter("did");
-//        String dname = req.getParameter("dname");
-//        String sid = req.getParameter("sid");
-//        String sname = req.getParameter("sname");
-//        resp.setContentType("text/html;charset=utf-8");//设置uft-8编码
-        //sid = "00000001";
-        //sname = "方辰宇";
-        //System.out.println(did);
-        //System.out.println(dname);
-        //System.out.println(sid);
-        //System.out.println(sname);
-
-
-        //List<Post> postList;
-        //List<Department> departmentList;
-
-        //postDao pd = new postDaoImp();
-        //departmentDao dd = new departmentDaoImp();
-        //System.out.println("431254254356436345");
-        //staffDao sd = new staffDaoImpDepartmentChange();
-
-//        postList = pd.getAllPost();
-//        departmentList = dd.getAllDepartment();
-        //staffList = sd.getByDidAndDnameAndSidAndSname(did,dname,sid,sname);
-        //departmentList= dd.getAllDepartment();
-        /*
-        for(Staff staff:staffList){
-            for(Department department:departmentList){
-                if(staff.getDid()==department.getDepartmentNumber()){
-                    staff.setDid(department.getDepartmentName());
-                }
-            }
-            for(Post post:postList){
-                if(staff.getPid()==post.getPnum()){
-                    staff.setPid(post.getPname());
-                }
-            }
-        }
-
-         */
-
-//        Gson gson= new Gson();
-//        String staffJson = gson.toJson(departmentList);
-//        System.out.println(staffJson);
-//        resp.getWriter().write(staffJson);
     }
 
 

@@ -3,7 +3,6 @@ package com.staffmanage.controller;
 
 
 
-import com.staffmanage.entity.Staff;
 import com.staffmanage.entity.Staff1;
 import com.staffmanage.service.staffService;
 import com.staffmanage.service.staffServiceImpl;
@@ -14,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Struct;
 
 @WebServlet("/AddStaffServlet")
 public class AddStaffServlet extends HttpServlet {

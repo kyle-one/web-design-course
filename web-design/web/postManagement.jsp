@@ -23,19 +23,14 @@
 		<a class="waves-effect waves-button" href="javascript:;" onclick="createAction()"><i class="zmdi zmdi-plus"></i> 新增岗位</a>
 		<a class="waves-effect waves-button" href="javascript:;" onclick="updateAction()"><i class="zmdi zmdi-edit"></i> 修改岗位</a>
 		<a class="waves-effect waves-button" href="javascript:;" onclick="deleteAction()"><i class="zmdi zmdi-close"></i> 删除岗位</a>
-		<input class="form-control2" style="width:100px"" id="input111" placeholder="岗位编号">
-		<input class="form-control2" style="width:100px"" id="input111" placeholder="名称">
-		<input class="form-control2" style="width:100px"" id="input111" placeholder="类型">
+		<a class="waves-effect waves-button" href="javascript:;" onclick="searchAction()"><i class="zmdi zmdi-search"></i> 查询部门员工</a>
 
-			<select class="form-control2">
-				<option disabled>(请选择岗位类型)</option>
-				<option>管理</option>
-				<option>技术</option>
-				<option>销售</option>
-				<option>市场</option>
-			</select>  
 
-		<a class="waves-effect waves-button" href="javascript:;" ><i class="zmdi zmdi-search"></i> 查找</a>
+		<input class="form-control2" style="width:100px" id="pnumSearch" placeholder="岗位编号">
+		<input class="form-control2" style="width:100px" id="pnameSearch" placeholder="名称">
+		<input class="form-control2" style="width:100px" id="typeSearch" placeholder="类型">
+
+		<a class="waves-effect waves-button" href="javascript:;" onclick="Search()"><i class="zmdi zmdi-search"></i> 查找</a>
 	</div>
 	<table id="table"></table>
 </div>
@@ -99,7 +94,7 @@ $(function() {
 	// bootstrap table初始化
 	// http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/
 	$table.bootstrapTable({
-		url: 'resources/data/data1.json',
+		url: 'PostManage',
 		height: getHeight(),
 		striped: true,
 		search: false,
@@ -128,10 +123,10 @@ $(function() {
 		toolbar: '#toolbar',
 		columns: [
 			{field: 'state', checkbox: true},
-			{field: 'id', title: '编号', sortable: true, halign: 'center'},
-			{field: 'name', title: '名称', sortable: true, halign: 'center'},
+			{field: 'pnum', title: '编号', sortable: true, halign: 'center'},
+			{field: 'pname', title: '名称', sortable: true, halign: 'center'},
 			{field: 'type', title: '岗位类型', sortable: true, halign: 'center'},
-			{field: 'bianzhi', title: '岗位编制', sortable: true, halign: 'center'},
+			{field: 'authorizedStrength', title: '岗位编制', sortable: true, halign: 'center'},
 		]
 	}).on('all.bs.table', function (e, name, args) {
 		$('[data-toggle="tooltip"]').tooltip();
@@ -167,35 +162,16 @@ function detailFormatter(index, row) {
 	});
 	return html.join('');
 }
-// 新增
-function createAction() {
-	$.confirm({
-		type: 'dark',
-		animationSpeed: 300,
-		title: '新增岗位',
-		content: $('#createDialog').html(),
-		buttons: {
-			confirm: {
-				text: '确认',
-				btnClass: 'waves-effect waves-button',
-				action: function () {
-					$.alert('确认');
-				}
-			},
-			cancel: {
-				text: '取消',
-				btnClass: 'waves-effect waves-button'
-			}
-		}
-	});
-}
-// 编辑
-function updateAction() {
+
+//查找对应的下属员工列表
+function searchAction() {
 	var rows = $table.bootstrapTable('getSelections');
-	if (rows.length == 0) {
+	console.log(rows);
+
+	if (rows.length ==0 || rows.length>1) {
 		$.confirm({
 			title: false,
-			content: '请至少选择一条记录！',
+			content: '请选择一条记录！',
 			autoClose: 'cancel|3000',
 			backgroundDismiss: true,
 			buttons: {
@@ -206,28 +182,101 @@ function updateAction() {
 			}
 		});
 	} else {
+		console.log(rows[0].dnum);
+
+		window.location.href="departmentSearch.jsp?"+"" +
+				"dnameFromDep="+rows[0].dname
+		//dnameFromDep=row.dname
+		//Update();
+
+	}
+}
+
+
+
+
+// 新增
+function createAction() {
+	window.location.href = "postAdd.jsp";
+}
+// 编辑
+function updateAction() {
+	var rows = $table.bootstrapTable('getSelections');
+	console.log(rows);
+
+
+	if (rows.length ==0 || rows.length>1) {
 		$.confirm({
-			type: 'blue',
-			animationSpeed: 300,
-			title: '编辑系统',
-			content: $('#createDialog').html(),
+			title: false,
+			content: '请选择一条记录！',
+			autoClose: 'cancel|3000',
+			backgroundDismiss: true,
 			buttons: {
-				confirm: {
-					text: '确认',
-					btnClass: 'waves-effect waves-button',
-					action: function () {
-						$.alert('确认');
-					}
-				},
 				cancel: {
 					text: '取消',
 					btnClass: 'waves-effect waves-button'
 				}
 			}
 		});
+	} else {
+		console.log(rows[0].pnum);
+
+		window.location.href="postUpdate.jsp?"+"" +
+				"pnum="+rows[0].pnum+"&"+
+				"pname="+rows[0].pname+"&"+
+				"type="+rows[0].type+"&"+
+				"authorizedStrength="+rows[0].authorizedStrength
+		//Update();
+
 	}
 }
+
+//查找岗位列表
+function Search() {
+	var pname= $('#pnameSearch').val();
+	var pnum= $('#pnumSearch').val();
+	var type= $('#typeSearch').val();
+	console.log(pnum);
+	setTimeout(function(){
+		$('#table').bootstrapTable('refresh',
+				{
+					url:'PostManage?pname='+pname+'&'+
+							'pnum='+pnum+'&'+
+							'type='+type
+				}
+
+		);
+	},500)
+	//window.location.href = "temp";
+
+}
+
+
+
+
 // 删除
+function Delete() {
+	var rows = $table.bootstrapTable('getSelections');
+	var i=0;
+	var s="";
+	for(i=0;i<rows.length;i++){
+		s=s+rows[i].pnum;
+		s+=','
+	}
+	//rows=rows[0].dname;
+	console.log(s);
+	$('#createDialog').bootstrapTable(
+			{
+				method:'get',
+				url:'PostDelete',
+				queryParams: {
+					pnumList:s,
+				}
+			}
+	)
+}
+
+
 function deleteAction() {
 	var rows = $table.bootstrapTable('getSelections');
 	if (rows.length == 0) {
@@ -244,31 +293,30 @@ function deleteAction() {
 			}
 		});
 	} else {
+		Delete();
 		$.confirm({
-			type: 'red',
-			animationSpeed: 300,
-			title: false,
-			content: '确认删除该系统吗？',
+			title: "删除成功！",
+			content: '删除成功！',
+			backgroundDismiss: true,
 			buttons: {
-				confirm: {
-					text: '确认',
-					btnClass: 'waves-effect waves-button',
-					action: function () {
-						var ids = new Array();
-						for (var i in rows) {
-							ids.push(rows[i].systemId);
-						}
-						$.alert('删除：id=' + ids.join("-"));
-					}
-				},
-				cancel: {
-					text: '取消',
+				yes: {
+					text: '确定',
 					btnClass: 'waves-effect waves-button'
 				}
 			}
 		});
+		setTimeout(function(){
+			$('#table').bootstrapTable('refresh',
+					{
+						url:'PostManage'
+					}
+
+			);
+		},1000)
+
 	}
 }
+
 </script>
 </body>
 </html>

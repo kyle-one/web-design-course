@@ -58,7 +58,7 @@ public class GetStaffByINPDServlet extends HttpServlet {
         String dname=request.getParameter("dname");
         String id=request.getParameter("id");
         String name=request.getParameter("name");
-        System.out.println("222222222222"+dname);
+//        System.out.println("222222222222"+dname);
 
 
         //2.根据请求找到某个业务逻辑处理

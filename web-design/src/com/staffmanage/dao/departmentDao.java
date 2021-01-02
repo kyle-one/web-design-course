@@ -19,5 +19,9 @@ public interface departmentDao {
 
     //根据dnum，dname，type查询部门
     List<Department> getByDnumAndDnameAndType(String dnum, String dname, String type);
+
+    //更新部门
+    void updateDepartment(Department dep);
+
 }
 

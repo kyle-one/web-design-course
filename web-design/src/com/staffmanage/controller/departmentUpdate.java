@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/DepartmentAdd")
-public class departmentAdd extends HttpServlet {
+@WebServlet("/DepartmentUpdate")
+public class departmentUpdate extends HttpServlet {
     Gson gson = new Gson();
 
     @Override
@@ -35,10 +35,10 @@ public class departmentAdd extends HttpServlet {
         dp.setEstablishDate(req.getParameter("establishDate"));
 
         departmentDao dDao=new departmentDaoImp();
-        dDao.addDepartment(dp);
+        dDao.updateDepartment(dp);
 
 
-        System.out.println(dp.getDname()+dp.getDnum()+dp.getEstablishDate()+dp.getType());
+        System.out.println("departmentUpdate:"+dp.getDname()+dp.getDnum()+dp.getEstablishDate()+dp.getType());
 
 
         req.getRequestDispatcher("departmentManagement.jsp").forward(req,resp);
