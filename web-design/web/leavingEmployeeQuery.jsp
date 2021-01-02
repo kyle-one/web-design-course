@@ -132,6 +132,12 @@
 							halign: 'center'
 						},
 						{
+							field: 'quitDate',
+							title: '离职时间',
+							sortable: true,
+							halign: 'center'
+						},
+						{
 							field: 'phone',
 							title: '联系电话',
 							sortable: true,
@@ -222,7 +228,7 @@
 							halign: 'center'
 						},
 						{
-							field: 'universit',
+							field: 'university',
 							title: '毕业院校',
 							sortable: true,
 							halign: 'center'

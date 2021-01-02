@@ -1,8 +1,6 @@
 package com.staffmanage.controller;
 
 
-import com.google.gson.Gson;
-import com.staffmanage.entity.Staff;
 import com.staffmanage.entity.Staff1;
 import com.staffmanage.entity.staffQuit;
 import com.staffmanage.entity.staffTalentPool;
@@ -52,7 +50,7 @@ public class DeleteStaffServlet2 extends HttpServlet {
         String name = request.getParameter("name");
         String maritalStatus = request.getParameter("maritalStatus");
         String birthPlace = request.getParameter("birthPlace");
-        String Hukou = request.getParameter("hukou");
+        String Hukou = request.getParameter("Hukou");
         String highestEducation = request.getParameter("highestEducation");
         String highestDegree = request.getParameter("highestDegree");
         String university = request.getParameter("university");

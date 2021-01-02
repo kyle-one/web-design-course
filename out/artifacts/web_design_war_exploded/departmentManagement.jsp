@@ -22,7 +22,9 @@
 	<div id="toolbar">
 		<a class="waves-effect waves-button" href="javascript:;" onclick="createAction()"><i class="zmdi zmdi-plus"></i> 新增部门</a>
 		<a class="waves-effect waves-button" href="javascript:;" onclick="updateAction()"><i class="zmdi zmdi-edit"></i> 修改部门</a>
-		<a class="waves-effect waves-button" href="javascript:;" onclick="deleteAction()"><i class="zmdi zmdi-close"></i> 删除部门</a>		
+		<a class="waves-effect waves-button" href="javascript:;" onclick="deleteAction()"><i class="zmdi zmdi-close"></i> 删除部门</a>
+		<a class="waves-effect waves-button" href="javascript:;" onclick="searchAction()"><i class="zmdi zmdi-search"></i> 查询部门员工</a>
+
 		<input class="form-control2" style="width:100px" id="dnumSearch" placeholder="部门编号">
 		<input class="form-control2" style="width:100px" id="dnameSearch" placeholder="名称">
 		<input class="form-control2" style="width:100px" id="typeSearch" placeholder="名称">
@@ -152,27 +154,28 @@ $(function() {
 });
 
 function actionFormatter(value, row, index) {
+	console.log(row);
     return [
-        '<a class="like" href="javascript:void(0)" data-toggle="tooltip" title="Like"><i class="glyphicon glyphicon-heart"></i></a>　',
-        '<a class="edit ml10" href="javascript:void(0)" data-toggle="tooltip" title="Edit"><i class="glyphicon glyphicon-edit"></i></a>　',
-        '<a class="remove ml10" href="javascript:void(0)" data-toggle="tooltip" title="Remove"><i class="glyphicon glyphicon-remove"></i></a>'
+        // '<a class="like" href="javascript:void(0)" data-toggle="tooltip" title="Like"><i class="glyphicon glyphicon-heart"></i></a>　',
+        '<a class="edit ml10" href="employeeTurnoverManagement.jsp?dnameFromDep=row.dname" data-toggle="tooltip" title="查询部门下员工"><i class="glyphicon glyphicon-edit"></i></a>　',
+        // '<a class="remove ml10" href="javascript:void(0)" data-toggle="tooltip" title="Remove"><i class="glyphicon glyphicon-remove"></i></a>'
     ].join('');
 }
 
-window.actionEvents = {
-    'click .like': function (e, value, row, index) {
-        alert('You click like icon, row: ' + JSON.stringify(row));
-        console.log(value, row, index);
-    },
-    'click .edit': function (e, value, row, index) {
-        alert('You click edit icon, row: ' + JSON.stringify(row));
-        console.log(value, row, index);
-    },
-    'click .remove': function (e, value, row, index) {
-        alert('You click remove icon, row: ' + JSON.stringify(row));
-        console.log(value, row, index);
-    }
-};
+// window.actionEvents = {
+//     'click .like': function (e, value, row, index) {
+//         alert('You click like icon, row: ' + JSON.stringify(row));
+//         console.log(value, row, index);
+//     },
+//     'click .edit': function (e, value, row, index) {
+//         alert('You click edit icon, row: ' + JSON.stringify(row));
+//         console.log(value, row, index);
+//     },
+//     'click .remove': function (e, value, row, index) {
+//         alert('You click remove icon, row: ' + JSON.stringify(row));
+//         console.log(value, row, index);
+//     }
+// };
 function detailFormatter(index, row) {
 	var html = [];
 	$.each(row, function (key, value) {
@@ -205,6 +208,9 @@ function createAction() {
 	window.location.href = "departmentManagementAdd.jsp";
 }
 
+
+
+
 // function Update() {
 // 	var rows = $table.bootstrapTable('getSelections');
 // 	var i=0;
@@ -228,6 +234,35 @@ function createAction() {
 // 	)
 
 
+
+//查询部门下员工
+function searchAction() {
+	var rows = $table.bootstrapTable('getSelections');
+	console.log(rows);
+
+	if (rows.length ==0 || rows.length>1) {
+		$.confirm({
+			title: false,
+			content: '请选择一条记录！',
+			autoClose: 'cancel|3000',
+			backgroundDismiss: true,
+			buttons: {
+				cancel: {
+					text: '取消',
+					btnClass: 'waves-effect waves-button'
+				}
+			}
+		});
+	} else {
+		console.log(rows[0].dnum);
+
+		window.location.href="employeeTurnoverManagement.jsp?"+"" +
+				"dnameFromDep="+rows[0].dname
+		//dnameFromDep=row.dname
+		//Update();
+
+	}
+}
 
 
 // 编辑

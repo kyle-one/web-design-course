@@ -21,8 +21,14 @@
 		<div id="main">
 
 			<div id="toolbar">
+				<%
+					String dnameFromDep=request.getParameter("dnameFromDep");
+					if(dnameFromDep==null){
+						dnameFromDep="";
+					}
+				%>
 				<input class="form-control2" style="width:100px" id="did" name="did" placeholder="部门编号">
-				<input class="form-control2" style="width:100px" id="dname" name="dname" placeholder="部门名称">
+				<input class="form-control2" style="width:100px" id="dname" name="dname" value="<%=dnameFromDep%>" placeholder="部门名称">
 				<input class="form-control2" style="width:100px" id="id" name="id" placeholder="员工编号">
 				<input class="form-control2" style="width:100px" id="name" name="name" placeholder="员工名称">
 
@@ -48,6 +54,10 @@
 
 		<script src="resources/js/common.js"></script>
 		<script>
+
+
+
+
 			var $table = $('#table');
 			$(function() {
 				$(document).on('focus', 'input[type="text"]', function() {
@@ -184,7 +194,7 @@
 							halign: 'center'
 						},
 						{
-							field: 'Hukou',
+							field: 'hukou',
 							title: '户口所在地',
 							sortable: true,
 							halign: 'center'
@@ -202,7 +212,7 @@
 							halign: 'center'
 						},
 						{
-							field: 'universit',
+							field: 'university',
 							title: '毕业院校',
 							sortable: true,
 							halign: 'center'
@@ -264,6 +274,7 @@
 				].join('');
 			}
 
+
 			window.actionEvents = {
 				'click .like': function(e, value, row, index) {
 					alert('You click like icon, row: ' + JSON.stringify(row));
@@ -286,6 +297,29 @@
 				});
 				return html.join('');
 			}
+			//用于department查询，通过department.jsp接受到部门名称，若接受到，则刷新，并且...
+<%--			<%--%>
+<%--                String dnameFromDep=request.getParameter("dnameFromDep");--%>
+<%--            %>--%>
+
+
+			// console.log('111111111111111111'+dnameFromDep);
+			//
+			// function SearchFromDepartment() {
+			// 	console.log('GetStaffByINPDServlet?'+'dname='+dnameFromDep);
+			//
+			// 	$('#table').bootstrapTable('refresh',
+			// 			{
+			// 				url:'GetStaffByINPDServlet?'+'dname='+dnameFromDep
+			// 			}
+			// 	)
+			// }
+			// if(dnameFromDep!=null){
+			// 	SearchFromDepartment();
+			// }
+
+
+
 			// 新增
 			function createAction() {
 				window.location.href = "employeeTurnoverManagement.jsp";
@@ -295,6 +329,10 @@
 				var dname=$('#dname').val();
 				var id=$('#id').val();
 				var name=$('#name').val();
+				 console.log(did,dname,id,name);
+				// console.log('GetStaffByINPDServlet?did='+did+'&'+'dname='+dname+'&'
+				// 		+'id='+id+'&'+'name='+name)
+
 				$('#table').bootstrapTable('refresh',
 						{
 
@@ -303,8 +341,13 @@
 
 						}
 				)
-
 			}
+			if("<%=dnameFromDep%>"!=""){
+				console.log("12314235315");
+				console.log("<%=dnameFromDep%>");
+				Search();
+			}
+
 			function updateAction() {
 				var rows = $table.bootstrapTable('getSelections');
 				console.log(rows);

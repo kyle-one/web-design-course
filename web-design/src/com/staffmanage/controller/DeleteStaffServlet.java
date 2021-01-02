@@ -49,11 +49,10 @@ public class DeleteStaffServlet extends HttpServlet {
         String name = request.getParameter("name");
         String maritalStatus = request.getParameter("maritalStatus");
         String birthPlace = request.getParameter("birthPlace");
-        String Hukou = request.getParameter("hukou");
+        String hukou = request.getParameter("hukou");
         String highestEducation = request.getParameter("highestEducation");
         String highestDegree = request.getParameter("highestDegree");
         String university = request.getParameter("university");
-        String sname = request.getParameter("sname");
         String majors = request.getParameter("majors");
         String dateOfGraduation = request.getParameter("dateOfGraduation");
         String entryDate = request.getParameter("entryDate");
@@ -62,9 +61,9 @@ public class DeleteStaffServlet extends HttpServlet {
         String pid = request.getParameter("pid");
         String did = request.getParameter("did");
         Staff1 s = new Staff1(id, sex, birthDate, idcardNo, formOfEmployment, sourceOfStaff, politicCountenance, nation,
-                nativePlace, phone, email, height, name, maritalStatus, birthPlace, Hukou, highestEducation,
+                nativePlace, phone, email, height, name, maritalStatus, birthPlace, hukou, highestEducation,
                 highestDegree, university, majors, dateOfGraduation, entryDate, workDate, bloodType, pid, did);
-
+        System.out.println(hukou);
         System.out.println(id);
         System.out.println(sex);
         //2.根据请求找到某个业务逻辑处理

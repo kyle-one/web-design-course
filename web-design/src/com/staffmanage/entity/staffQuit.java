@@ -56,7 +56,7 @@ public class staffQuit {
         this.name = name;
         this.maritalStatus = maritalStatus;
         this.birthPlace = birthPlace;
-        Hukou = hukou;
+        this.Hukou = hukou;
         this.highestEducation = highestEducation;
         this.highestDegree = highestDegree;
         this.university = university;
@@ -207,7 +207,7 @@ public class staffQuit {
     }
 
     public void setHukou(String hukou) {
-        Hukou = hukou;
+        this.Hukou = hukou;
     }
 
     public String getHighestEducation() {

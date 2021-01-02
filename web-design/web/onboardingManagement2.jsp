@@ -201,7 +201,7 @@
 							halign: 'center'
 						},
 						{
-							field: 'universit',
+							field: 'university',
 							title: '毕业院校',
 							sortable: true,
 							halign: 'center'
@@ -304,7 +304,7 @@
 
 
 					window.location.href='AddStaffFromTP?id='+rows[0].id+'&'+'sex='+rows[0].sex+'&'+'birthDate='+rows[0].birthDate
-							+'&'+'idcardNo='+rows[0].formOfEmployment+'&'+'sourceOfStaff='+rows[0].sourceOfStaff+'&'+'politicCountenance='+rows[0].politicCountenance+'&'+'nation='+rows[0].nation
+							+'&'+'idcardNo='+rows[0].idcardNo+'&'+'formOfEmployment='+rows[0].formOfEmployment+'&'+'sourceOfStaff='+rows[0].sourceOfStaff+'&'+'politicCountenance='+rows[0].politicCountenance+'&'+'nation='+rows[0].nation
 							+'&'+'nativePlace='+rows[0].nativePlace+'&'+'phone='+rows[0].phone+'&'+'email='+rows[0].email+'&'+'height='+rows[0].height
 							+'&'+'name='+rows[0].name+'&'+'maritalStatus='+rows[0].maritalStatus+'&'+'birthPlace='+rows[0].birthPlace+'&'+'hukou='+rows[0].hukou
 							+'&'+'highestEducation='+rows[0].highestEducation+'&'+'highestDegree='+rows[0].highestDegree+'&'+'university='+rows[0].university+'&'+'majors='+rows[0].majors
