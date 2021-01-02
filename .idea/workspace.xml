@@ -28,24 +28,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="797b6cdd-f057-4f1e-84c8-30529a3233bd" name="Default Changelist" comment="servlet化项目">
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/controller/DeleteStaffServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/controller/DeleteStaffServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/controller/DeleteStaffServlet2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/controller/DeleteStaffServlet2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/departmentManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/departmentManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/employeeTurnoverManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/employeeTurnoverManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/leavingEmployeeQuery.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/leavingEmployeeQuery.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/onboardingManagement2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/onboardingManagement2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/controller/DeleteStaffServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/controller/DeleteStaffServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/controller/DeleteStaffServlet2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/controller/DeleteStaffServlet2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/DeleteStaffServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/DeleteStaffServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/DeleteStaffServlet2.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/DeleteStaffServlet2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/GetStaffByINPDServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/GetStaffByINPDServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/entity/staffQuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/entity/staffQuit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-design/web/departmentManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/web/departmentManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-design/web/employeeTurnoverManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/web/employeeTurnoverManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-design/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/web/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-design/web/leavingEmployeeQuery.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/web/leavingEmployeeQuery.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-design/web/onboardingManagement2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/web/onboardingManagement2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Enterprise_software_design_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Enterprise_software_design_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/Utils/DbUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/Utils/DbUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/changedPost.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/changedPost.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/Utils/DbUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/Utils/DbUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/Utils/DbUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/Utils/DbUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,6 +210,7 @@
       <workItem from="1609566471992" duration="1189000" />
       <workItem from="1609568917348" duration="72000" />
       <workItem from="1609569060919" duration="4554000" />
+      <workItem from="1609577096596" duration="339000" />
     </task>
     <task id="LOCAL-00001" summary="jsp">
       <created>1609124288711</created>
@@ -299,54 +290,54 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="530" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864@62.0.1474.864" timestamp="1609570534089" />
-    <state width="1232" height="62" key="GridCell.Tab.0.bottom" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.0.bottom" timestamp="1609577394074">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.0.center" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609577394074" />
+    <state width="1232" height="255" key="GridCell.Tab.0.center" timestamp="1609577394073">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.0.left" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1609577394073" />
+    <state width="1232" height="255" key="GridCell.Tab.0.left" timestamp="1609577394073">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.0.right" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1609577394073" />
+    <state width="1232" height="255" key="GridCell.Tab.0.right" timestamp="1609577394074">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.1.bottom" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1609577394074" />
+    <state width="1232" height="255" key="GridCell.Tab.1.bottom" timestamp="1609577393934">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.1.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.1.center" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.1.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609577393934" />
+    <state width="1232" height="255" key="GridCell.Tab.1.center" timestamp="1609577393934">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.1.center/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.1.left" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.1.center/62.0.1474.864@62.0.1474.864" timestamp="1609577393934" />
+    <state width="1232" height="255" key="GridCell.Tab.1.left" timestamp="1609577393934">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.1.left/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.1.right" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.1.left/62.0.1474.864@62.0.1474.864" timestamp="1609577393934" />
+    <state width="1232" height="255" key="GridCell.Tab.1.right" timestamp="1609577393934">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.1.right/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.2.bottom" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.1.right/62.0.1474.864@62.0.1474.864" timestamp="1609577393934" />
+    <state width="1232" height="255" key="GridCell.Tab.2.bottom" timestamp="1609577393934">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.2.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.2.center" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.2.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609577393934" />
+    <state width="1232" height="255" key="GridCell.Tab.2.center" timestamp="1609577393934">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.2.center/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.2.left" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.2.center/62.0.1474.864@62.0.1474.864" timestamp="1609577393934" />
+    <state width="1232" height="255" key="GridCell.Tab.2.left" timestamp="1609577393934">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.2.left/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
-    <state width="1232" height="62" key="GridCell.Tab.2.right" timestamp="1609573367745">
+    <state width="1232" height="255" key="GridCell.Tab.2.left/62.0.1474.864@62.0.1474.864" timestamp="1609577393934" />
+    <state width="1232" height="255" key="GridCell.Tab.2.right" timestamp="1609577393934">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="62" key="GridCell.Tab.2.right/62.0.1474.864@62.0.1474.864" timestamp="1609573367745" />
+    <state width="1232" height="255" key="GridCell.Tab.2.right/62.0.1474.864@62.0.1474.864" timestamp="1609577393934" />
     <state width="1232" height="62" key="GridCell.Tab.3.bottom" timestamp="1609573360472">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
@@ -363,6 +354,10 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state width="1232" height="62" key="GridCell.Tab.3.right/62.0.1474.864@62.0.1474.864" timestamp="1609573360472" />
+    <state x="306" y="286" width="854" height="267" key="MultipleFileMergeDialog" timestamp="1609577110060">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="306" y="286" width="854" height="267" key="MultipleFileMergeDialog/62.0.1474.864@62.0.1474.864" timestamp="1609577110060" />
     <state x="456" y="197" key="run.anything.popup" timestamp="1609383517900">
       <screen x="62" y="0" width="1474" height="864" />
     </state>

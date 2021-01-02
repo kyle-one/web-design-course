@@ -96,7 +96,7 @@
                 // {field: 'dname', title: '部门名称', sortable: true, halign: 'center'},
                 {field: 'tdate', title: '调动时间', sortable: true, halign: 'center'},
                 {field: 'reason', title: '调动原因', sortable: true, halign: 'center'},
-                {field: 'typename', title: '调动方式', sortable: true, halign: 'center'},
+                {field: 'postname', title: '调动方式', sortable: true, halign: 'center'},
                 {field: 'remarks', title: '备注', sortable: true, halign: 'center'},
                 {
                     field: 'action',
