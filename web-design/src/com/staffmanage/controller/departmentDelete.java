@@ -30,7 +30,7 @@ public class departmentDelete extends HttpServlet {
         }
 
         departmentDao dDao=new departmentDaoImp();
-        dDao.deleteDepartment(dnumList);
+//        dDao.deleteDepartment(dnumList);
 
 //        Department dp= new Department();
 //

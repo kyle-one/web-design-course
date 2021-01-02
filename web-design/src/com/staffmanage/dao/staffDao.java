@@ -14,4 +14,6 @@ public interface staffDao {
     List<Staff> getByDidAndDnameAndSidAndSname();
 
     List<changeDepartmentView> getByDidAndDnameAndSidAndSname(String did, String dname, String sid, String sname);
+
+
 }

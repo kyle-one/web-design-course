@@ -1,15 +1,8 @@
 package com.staffmanage.controller;
 import com.google.gson.Gson;
-import com.staffmanage.dao.Imp.departmentDaoImp;
-import com.staffmanage.dao.Imp.postDaoImp;
-import com.staffmanage.dao.Imp.staffDaoImpDepartmentChange;
-import com.staffmanage.dao.departmentDao;
-import com.staffmanage.dao.postDao;
-import com.staffmanage.dao.staffDao;
 import com.staffmanage.entity.Department;
-import com.staffmanage.entity.Post;
-import com.staffmanage.entity.Staff;
-import com.staffmanage.entity.view.changeDepartmentView;
+import com.staffmanage.dao.departmentDao;
+import com.staffmanage.dao.Imp.departmentDaoImp;
 import javafx.geometry.Pos;
 
 import java.io.IOException;
@@ -21,12 +14,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Department")
-public class departmentController extends HttpServlet {
+@WebServlet("/DepartmentUpdate")
+public class departmentUpdate extends HttpServlet {
     Gson gson = new Gson();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        resp.setContentType("text/html;charset=utf-8");//设置uft-8编码
+        req.setCharacterEncoding("UTF-8");
+        System.out.println(req.getParameter("abc"));
+        System.out.println(req.getParameter("a"));
+//        Department dp= new Department();
+//
+//        dp.setDnum(req.getParameter("dnum"));
+//        dp.setDname(req.getParameter("dname"));
+//        dp.setType(req.getParameter("type"));
+//        dp.setParent(req.getParameter("parent"));
+//        dp.setFax(req.getParameter("fax"));
+//        dp.setDes(req.getParameter("des"));
+//        dp.setPhone(req.getParameter("phone"));
+//        dp.setEstablishDate(req.getParameter("establishDate"));
+//
+//        departmentDao dDao=new departmentDaoImp();
+//        dDao.addDepartment(dp);
+//
+//
+//        System.out.println(dp.getDname()+dp.getDnum()+dp.getEstablishDate()+dp.getType());
+//
+
+
+        //System.out.println("gfdgfdgfd:"+dname);
+        req.getRequestDispatcher("departmentManagement.jsp").forward(req,resp);
 
 
 //        String did = req.getParameter("did");
@@ -40,19 +59,20 @@ public class departmentController extends HttpServlet {
         //System.out.println(dname);
         //System.out.println(sid);
         //System.out.println(sname);
-        resp.setContentType("text/html;charset=utf-8");//设置uft-8编码
 
-        List<Post> postList;
-        List<Department> departmentList;
 
-        postDao pd = new postDaoImp();
-        departmentDao dd = new departmentDaoImp();
+        //List<Post> postList;
+        //List<Department> departmentList;
+
+        //postDao pd = new postDaoImp();
+        //departmentDao dd = new departmentDaoImp();
+        //System.out.println("431254254356436345");
         //staffDao sd = new staffDaoImpDepartmentChange();
 
 //        postList = pd.getAllPost();
 //        departmentList = dd.getAllDepartment();
         //staffList = sd.getByDidAndDnameAndSidAndSname(did,dname,sid,sname);
-        departmentList= dd.getAllDepartment();
+        //departmentList= dd.getAllDepartment();
         /*
         for(Staff staff:staffList){
             for(Department department:departmentList){
@@ -69,11 +89,12 @@ public class departmentController extends HttpServlet {
 
          */
 
-        Gson gson= new Gson();
-        String staffJson = gson.toJson(departmentList);
-        System.out.println(staffJson);
-        resp.getWriter().write(staffJson);
+//        Gson gson= new Gson();
+//        String staffJson = gson.toJson(departmentList);
+//        System.out.println(staffJson);
+//        resp.getWriter().write(staffJson);
     }
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

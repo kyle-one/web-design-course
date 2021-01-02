@@ -23,7 +23,7 @@ public class postDaoImp implements postDao {
         try {
             conn= DbUtils.getConnection();
             System.out.println("conn:"+conn);
-            String sql="select  *  from post";
+            String sql="select  *  from post where 1=1 and (del=0 or del is null)";
             pstmt=conn.prepareStatement(sql);
 
             rs=pstmt.executeQuery();
