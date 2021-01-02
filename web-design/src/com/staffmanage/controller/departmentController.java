@@ -1,16 +1,12 @@
 package com.staffmanage.controller;
+
 import com.google.gson.Gson;
 import com.staffmanage.dao.Imp.departmentDaoImp;
 import com.staffmanage.dao.Imp.postDaoImp;
-import com.staffmanage.dao.Imp.staffDaoImpDepartmentChange;
 import com.staffmanage.dao.departmentDao;
 import com.staffmanage.dao.postDao;
-import com.staffmanage.dao.staffDao;
 import com.staffmanage.entity.Department;
 import com.staffmanage.entity.Post;
-import com.staffmanage.entity.Staff;
-import com.staffmanage.entity.view.changeDepartmentView;
-import javafx.geometry.Pos;
 
 import java.io.IOException;
 import java.util.List;
@@ -30,10 +26,10 @@ public class departmentController extends HttpServlet {
 
         resp.setContentType("text/html;charset=utf-8");//设置uft-8编码
 
-        String dname=req.getParameter("dname");
-        String dnum=req.getParameter("dnum");
-        String type=req.getParameter("type");
-        System.out.println(dnum+dname+type);
+        String dname = req.getParameter("dname");
+        String dnum = req.getParameter("dnum");
+        String type = req.getParameter("type");
+        System.out.println(dnum + dname + type);
 
 
         List<Post> postList;
@@ -46,7 +42,7 @@ public class departmentController extends HttpServlet {
 //        postList = pd.getAllPost();
 //        departmentList = dd.getAllDepartment();
         //staffList = sd.getByDidAndDnameAndSidAndSname(did,dname,sid,sname);
-        departmentList= dd.getByDnumAndDnameAndType(dnum,dname,type);
+        departmentList = dd.getByDnumAndDnameAndType(dnum, dname, type);
         //departmentList= dd.getAllDepartment();
 
 
@@ -67,9 +63,9 @@ public class departmentController extends HttpServlet {
 
          */
 
-        Gson gson= new Gson();
+        Gson gson = new Gson();
         String staffJson = gson.toJson(departmentList);
-        System.out.println(staffJson);
+        //System.out.println(staffJson);
         resp.getWriter().write(staffJson);
     }
 

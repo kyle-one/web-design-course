@@ -1,8 +1,6 @@
 package com.staffmanage.dao;
 
 import com.staffmanage.entity.Department;
-import com.staffmanage.entity.view.changeDepartmentView;
-import com.staffmanage.entity.Department;
 
 import java.util.List;
 

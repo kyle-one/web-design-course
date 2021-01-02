@@ -1,4 +1,10 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.staffmanage.entity.Department" %>
+<%@ page import="com.staffmanage.entity.Post" %>
+<%@ page import="com.staffmanage.dao.Imp.changeDepartmentImp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
@@ -7,7 +13,8 @@
     <title>部门调动</title>
 
     <link href="resources/plugins/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="resources/plugins/material-design-iconic-font-2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet"/>
+    <link href="resources/plugins/material-design-iconic-font-2.2.0/css/material-design-iconic-font.min.css"
+          rel="stylesheet"/>
     <link href="resources/plugins/bootstrap-table-1.11.0/bootstrap-table.min.css" rel="stylesheet"/>
     <link href="resources/plugins/waves-0.7.5/waves.min.css" rel="stylesheet"/>
     <link href="resources/plugins/jquery-confirm/jquery-confirm.min.css" rel="stylesheet"/>
@@ -19,65 +26,55 @@
 <body>
 <div id="main" style="margin-top: 10px">
     <!-- 未调职 or 已调职 -->
-    <div id="searchCondition">
-        <form action="${pageContext.request.contextPath }/changeDepartment" method="post" id="toolbar">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-bottom: 5px;">
-                    未调度 <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="javascript:notDispatched">未调度查询</a></li>
-                    <li><a href="javascript:isDispatched()">已调度查询</a></li>
-                </ul>
-            </div>
-            <input type="text" class="form-control3" name="did" id="did" placeholder="部门编号"  style="width: 120px">
-            <input type="text" class="form-control3" name="dname" id="dname" placeholder="部门名称"  style="width: 120px">
-            <input type="text" class="form-control3" name="sid" id="sid" placeholder="员工编号"  style="width: 120px">
-            <input type="text" class="form-control3" name="sname" id="sname" placeholder="员工姓名"  style="width: 120px">
-            <input type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="搜索" style="margin-bottom: 5px;">
-        </form>
+    <div id="toolbar">
+        <input type="text" class="form-control3" name="did" id="did" placeholder="部门编号" style="width: 120px">
+        <input type="text" class="form-control3" name="dname" id="dname" placeholder="部门名称" style="width: 120px">
+        <input type="text" class="form-control3" name="sid" id="sid" placeholder="员工编号" style="width: 120px">
+        <input type="text" class="form-control3" name="sname" id="sname" placeholder="员工姓名" style="width: 120px">
+        <a class="waves-effect waves-button" href="javascript:;" onclick="Search()"><i class="zmdi zmdi-search"></i> 查找</a>
+
+        <!--<input type="button" class="btn btn-default dropdown-toggle" id="btn_query" value="搜索"
+               style="margin-bottom: 5px;">-->
     </div>
     <table id="table"></table>
-</div>
-<!-- 新增 -->
-<div id="createDialog" class="crudDialog" hidden>
-    <form>
-        <div class="form-group">
-            <select class="form-control" id="inputGroupSelect01">
-                <option value="programing">开发部</option>
-                <option value="selling">销售部</option>
-            </select>
-            <select class="form-control">
-                <option value="front-end">前端工程师</option>
-                <option value="test">测试工程师</option>
-            </select>
-        </div>
-    </form>
 </div>
 <!--编辑信息-->
 <div id="changeDataDialog" class="crudDialog" hidden>
     <form>
+        <%
+            //List<Post> postList;
+            List<Department> departmentList;
+
+            changeDepartmentImp cdd = new changeDepartmentImp();
+
+            departmentList = cdd.getAllDepartment();
+            //postList = cdd.getAllPost();
+        %>
         <div class="form-group">
             <a style="font-size: 16px;">调入部门：</a><br>
-            <select class="form-control2">
-                <option value="programing">开发部</option>
-                <option value="selling">销售部</option>
-            </select>
-            <select class="form-control2" style="margin-bottom: 10px">
-                <option value="front-end">前端工程师</option>
-                <option value="test">测试工程师</option>
+            <select class="form-control2" id="departmentGroup">
+                <%for (int i = 0; i < departmentList.size(); i++) {%>
+                <option value="<%=departmentList.get(i).getDnum()%>"><%=departmentList.get(i).getDname()%>
+                </option>
+                <%}%>
             </select><br>
-            <a style="font-size: 16px;">调入部门：</a><br>
-            <select class="form-control2" style="margin-bottom: 10px">
-                <option value="front-end">主动调动</option>
-                <option value="test">被动调动</option>
-                <option value="test">数据错误</option>
+            <%--            <select class="form-control2" id="postGroup" style="margin-bottom: 10px">--%>
+            <%--                <%for(int i=0;i<postList.size();i++){%>--%>
+            <%--                    <option id="post<%=postList.get(i).getPnum()%>"><%=postList.get(i).getPname()%></option>--%>
+            <%--                <%}%>--%>
+            <%--            </select><br>--%>
+            <a style="font-size: 16px;">调动方式：</a><br>
+            <select class="form-control2" id="type" style="margin-bottom: 10px">
+                <option id="activeChange" value="1">主动调动</option>
+                <option id="passiveChange" value="2">被动调动</option>
+                <%--                <option >数据错误</option>--%>
             </select><br>
             <a style="font-size: 16px;">调动时间：</a>
-            <input type="date" class="form-control" placeholder="twitterhandle" style="width: 30%;margin-bottom: 10px;">
+            <input type="date" class="form-control" id="tdate" style="width: 30%;margin-bottom: 10px;">
+            <a style="font-size: 16px;">调动原因：</a>
+            <input type="text" style="width: 100%;height: 100px" id="reason">
             <a style="font-size: 16px;">备注：</a><br>
-            <textarea style="width: 100%;height: 100px">  </textarea>
-
+            <input type="text" style="width: 100%;height: 100px" id="remarks"><br>
         </div>
     </form>
 </div>
@@ -93,10 +90,10 @@
 <script src="resources/js/common.js"></script>
 <script>
     var $table = $('#table');
-    $(function() {
-        $(document).on('focus', 'input[type="text"]', function() {
+    $(function () {
+        $(document).on('focus', 'input[type="text"]', function () {
             $(this).parent().find('label').addClass('active');
-        }).on('blur', 'input[type="text"]', function() {
+        }).on('blur', 'input[type="text"]', function () {
             if ($(this).val() == '') {
                 $(this).parent().find('label').removeClass('active');
             }
@@ -139,24 +136,21 @@
                 {field: 'dname', title: '部门名称', sortable: true, halign: 'center'},
                 {field: 'pid', title: '岗位编号', sortable: true, halign: 'center'},
                 {field: 'pname', title: '岗位名称', sortable: true, halign: 'center'},
-                {field: 'action', title: '操作', halign: 'center', align: 'center', formatter: 'actionFormatter',  clickToSelect: false}
+                {
+                    field: 'action',
+                    title: '操作',
+                    halign: 'center',
+                    align: 'center',
+                    formatter: 'actionFormatter',
+                    clickToSelect: false
+                }
             ],
-            queryParams:function (params) {
-                var temp = {
-                    limit:params.limit,//页面大小
-                    offset:params.offset,//页码
-                    did:$.trim($('#did').val()),
-                    dname:$.trim($('#dname').val()),
-                    dname:$.trim($('#dname').val()),
-                    dname:$.trim($('#dname').val()),
-                    dname:$.trim($('#dname').val()),
-                };
-            }
         }).on('all.bs.table', function (e, name, args) {
             $('[data-toggle="tooltip"]').tooltip();
             $('[data-toggle="popover"]').popover();
         });
     });
+
     function actionFormatter(value, row, index) {
         return [
             '<a class="like" href="javascript:changeData()" data-toggle="tooltip" title="编辑"><i class="glyphicon glyphicon-edit"></i></a>　',
@@ -171,36 +165,32 @@
         return html.join('');
     }
 
-    //改变时间
-    function changeData() {
-        $.confirm({
-            type: 'blue',
-            animationSpeed: 300,
-            title: '编辑部门调动信息',
-            content: $('#changeDataDialog').html(),
-            buttons: {
-                confirm: {
-                    text: '确认',
-                    btnClass: 'waves-effect waves-button',
-                    action: function () {
-                        $.alert('确认');
-                    }
-                },
-                cancel: {
-                    text: '取消',
-                    btnClass: 'waves-effect waves-button'
-                }
+    function Search() {
+        var did = $('#did').val();
+        var dname = $('#dname').val();
+        var sid = $('#sid').val();
+        var sname = $('#sname').val();
+        console.log(dname);
+
+        $('#table').bootstrapTable('refresh',
+            {
+                url: 'changeDepartment?did=' + did + '&' +
+                    'dname=' + dname + '&' +
+                    'sid=' + sid + '&' +
+                    'sname=' + sname
             }
-        });
+        );
     }
 
-    // 编辑
-    function updateAction() {
-        var rows = $table.bootstrapTable('getSelections');
-        if (rows.length == 0) {
+
+    //更新框
+    function changeData() {
+        var row = $table.bootstrapTable('getSelections');
+
+        if (row.length === 0 || row.length > 1) {
             $.confirm({
                 title: false,
-                content: '请至少选择一条记录！',
+                content: '请选择一条记录！',
                 autoClose: 'cancel|3000',
                 backgroundDismiss: true,
                 buttons: {
@@ -211,69 +201,12 @@
                 }
             });
         } else {
-            $.confirm({
-                type: 'blue',
-                animationSpeed: 300,
-                title: '部门岗位调动',
-                content: $('#createDialog').html(),
-                buttons: {
-                    confirm: {
-                        text: '确认',
-                        btnClass: 'waves-effect waves-button',
-                        action: function () {
-                            $.alert('确认');
-                        }
-                    },
-                    cancel: {
-                        text: '取消',
-                        btnClass: 'waves-effect waves-button'
-                    }
-                }
-            });
+            window.location.href = "changeDepartmentUpdate.jsp?"+
+                "sid=" + row[0].id + "&" +
+                "did=" + row[0].did;
         }
     }
-    // 删除
-    function deleteAction() {
-        var rows = $table.bootstrapTable('getSelections');
-        if (rows.length == 0) {
-            $.confirm({
-                title: false,
-                content: '请至少选择一条记录！',
-                autoClose: 'cancel|3000',
-                backgroundDismiss: true,
-                buttons: {
-                    cancel: {
-                        text: '取消',
-                        btnClass: 'waves-effect waves-button'
-                    }
-                }
-            });
-        } else {
-            $.confirm({
-                type: 'red',
-                animationSpeed: 300,
-                title: false,
-                content: '确认删除该员工记录吗？',
-                buttons: {
-                    confirm: {
-                        text: '确认',
-                        btnClass: 'waves-effect waves-button',
-                        action: function () {
-                            var ids = new Array();
-                            for (var i in rows) {
-                                ids.push(rows[i].systemId);
-                            }
-                            $.alert('删除：id=' + ids.join("-"));
-                        }
-                    },
-                    cancel: {
-                        text: '取消',
-                        btnClass: 'waves-effect waves-button'
-                    }
-                }
-            });
-        }
-    }
+
 </script>
 </body>
 </html>
