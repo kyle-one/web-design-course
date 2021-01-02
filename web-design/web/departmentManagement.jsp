@@ -354,7 +354,14 @@ function deleteAction() {
 				}
 			}
 		});
-		window.location.href = "temp";
+		setTimeout(function(){
+			$('#table').bootstrapTable('refresh',
+					{
+						url:'Department'
+					}
+
+			);
+		},500)
 	}
 }
 </script>
