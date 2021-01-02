@@ -198,7 +198,7 @@ function Search() {
 	//window.location.href = "temp";
 
 }
-
+alert("有必填项还未填写！");
 
 // 新增
 function createAction() {
@@ -252,6 +252,7 @@ function updateAction() {
 			}
 		});
 	} else {
+		console.log(rows[0].dnum);
 
 		window.location.href="departmentManagementAdd.jsp?"+"" +
 				"dname="+rows[0].dname+"&"+

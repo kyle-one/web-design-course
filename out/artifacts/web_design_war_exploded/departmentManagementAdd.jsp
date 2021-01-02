@@ -59,7 +59,7 @@
 <%--    <form >--%>
             <div class="form-group">
                 <label for="dname" class="active">名称（必填）</label>
-                <input id="dname"  name="dname" type="text" value=""+<%=dname%> class="form-control">
+                <input id="dname"  name="dname" type="text" value="<%=dname%>" class="form-control">
             </div>
 <%--            <div class="form-group">--%>
 <%--                <label for="type">类型（必填）</label>--%>
@@ -67,31 +67,31 @@
 <%--            </div>--%>
             <div class="form-group">
                 <label for="phone" class="active">电话（必填）</label>
-                <input id="phone" name="phone" type="text"value=""+<%=phone%> class="form-control">
+                <input id="phone" name="phone" type="text"value="<%=phone%>" class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="fax" class="active">传真</label>
-                <input id="fax" type="text" name="fax" value=""+<%=fax%> class="form-control">
+                <input id="fax" type="text" name="fax" value="<%=fax%>" class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="des" class="active">描述</label>
-                <input id="des" name="des" type="text" value=""+<%=des%> class="form-control">
+                <input id="des" name="des" type="text" value="<%=des%>" class="form-control">
             </div>
 
             <div class="form-group">
                 <label for="parent" class="active">上级部门</label>
-                <input id="parent" name="parent" type="text" value=""+<%=parent%> class="form-control">
+                <input id="parent" name="parent" type="text" value="<%=parent%>" class="form-control">
             </div>
             <div class="form-group">
                 <label for="establishDate" class="active">成立时间（必填）</label>
-                <input id="establishDate" name="establishDate" type="date" value=""+<%=establishDate%> class="form-control">
+                <input id="establishDate" name="establishDate" type="date" value="<%=establishDate%>" class="form-control">
             </div>
 
             <div class="form-group">
-                <select class="form-control" name="type" ng-value=""+<%=type%> id="type">
-                    <option disabled>(请选择类型)</option>
+                <select class="form-control" name="type" ng-value="<%=type%>" id="type">
+                    <option>(请选择类型)</option>
                     <option>公司</option>
                     <option>部门</option>
                 </select>

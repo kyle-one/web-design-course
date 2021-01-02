@@ -252,6 +252,7 @@ function updateAction() {
 			}
 		});
 	} else {
+		console.log(rows[0].dnum);
 
 		window.location.href="departmentManagementAdd.jsp?"+"" +
 				"dname="+rows[0].dname+"&"+
