@@ -3,9 +3,7 @@ package com.staffmanage.controller;
 
 
 
-import com.staffmanage.entity.Staff;
-import com.staffmanage.service.staffService;
-import com.staffmanage.service.staffServiceImpl;
+import com.staffmanage.entity.Staff1;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -62,7 +60,7 @@ public class AddStaffFromTP extends HttpServlet {
         String bloodType = request.getParameter("bloodType");
         String pid = request.getParameter("pid");
         String did = request.getParameter("did");
-        Staff s = new Staff(id, sex, birthDate, idcardNo, formOfEmployment, sourceOfStaff, politicCountenance, nation,
+        Staff1 s = new Staff1(id, sex, birthDate, idcardNo, formOfEmployment, sourceOfStaff, politicCountenance, nation,
                 nativePlace, phone, email, height, name, maritalStatus, birthPlace, Hukou, highestEducation,
                 highestDegree, university, majors, dateOfGraduation, entryDate, workDate, bloodType, pid, did);
 

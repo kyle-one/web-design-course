@@ -198,7 +198,7 @@ function Search() {
 	//window.location.href = "temp";
 
 }
-alert("有必填项还未填写！");
+
 
 // 新增
 function createAction() {
