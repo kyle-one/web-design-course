@@ -27,11 +27,55 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797b6cdd-f057-4f1e-84c8-30529a3233bd" name="Default Changelist" comment="完成post和manage全部功能">
+    <list default="true" id="797b6cdd-f057-4f1e-84c8-30529a3233bd" name="Default Changelist" comment="post和department 修复bug">
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/GetStaffByPostNumServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/getAllpersionalNumsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/getPositionChangeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/getWorkChangeHiresServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/getnewHiresServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/controller/getseparatedHiresServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/newHireDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/newHiresDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/persionalReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/persionalServiceDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/persionalServiceDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/positionChangeHiresDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/positionChangeHiresDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/separatedHiresDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/separatedHiresDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/workChangeHiresDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/workChangeHiresDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/entity/staffxun.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/service/persionalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/service/persionalServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/web/newHires.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/web/personalReport.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/web/positionChangeHires.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/web/postSearch.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/web/separatedHires.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-design/web/workChangeHires.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/dao/Imp/staffDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/dao/Imp/staffDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/dao/staffDao1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/dao/staffDao1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/service/staffService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/service/staffService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/service/staffServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/WEB-INF/classes/com/staffmanage/service/staffServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/departmentManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/departmentManagement.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-design/web/departmentManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/web/departmentManagement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/postManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_design_war_exploded/postManagement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/dao/Imp/staffDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/dao/Imp/staffDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/dao/Imp/staffTalentPoolDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/dao/Imp/staffTalentPoolDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/dao/staffDao1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/dao/staffDao1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/service/staffService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/service/staffService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/service/staffServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/web-design/com/staffmanage/service/staffServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/Imp/changeDepartmentImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/Imp/changeDepartmentImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/Imp/staffDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/Imp/staffDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/Imp/staffTalentPoolDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/Imp/staffTalentPoolDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/staffDao1.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/staffDao1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/service/staffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/service/staffService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-design/src/com/staffmanage/service/staffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/src/com/staffmanage/service/staffServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-design/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-design/web/onboardingManagement2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/web/onboardingManagement2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-design/web/postManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web-design/web/postManagement.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +112,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-design/src/com/staffmanage/dao/Imp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-design/web" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -76,10 +120,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\learning\web-course\web-design-course\web-design\src\com\staffmanage\dao\Imp" />
-      <recent name="D:\learning\web-course\web-design-course\web-design" />
       <recent name="D:\learning\web-course\web-design-course\web-design\web" />
-      <recent name="D:\learning\web-course\web-design-course\web-design\src" />
+      <recent name="D:\learning\web-course\web-design-course\web-design\src\com\staffmanage\dao\Imp" />
+      <recent name="D:\learning\web-course\web-design-course\web-design\src\com\staffmanage\service" />
+      <recent name="D:\learning\web-course\web-design-course\web-design\src\com\staffmanage\controller" />
+      <recent name="D:\learning\web-course\web-design-course\web-design\src\com\staffmanage\dao" />
     </key>
   </component>
   <component name="RunManager">
@@ -208,7 +253,10 @@
       <workItem from="1609569060919" duration="4554000" />
       <workItem from="1609577096596" duration="3031000" />
       <workItem from="1609580157736" duration="11674000" />
-      <workItem from="1609594816482" duration="1026000" />
+      <workItem from="1609594816482" duration="1545000" />
+      <workItem from="1609596386498" duration="384000" />
+      <workItem from="1609596797806" duration="5094000" />
+      <workItem from="1609602090293" duration="998000" />
     </task>
     <task id="LOCAL-00001" summary="jsp">
       <created>1609124288711</created>
@@ -245,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609592500291</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="post和department 修复bug">
+      <created>1609596073947</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609596073947</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +336,8 @@
     <MESSAGE value="servlet化项目" />
     <MESSAGE value="merge kong" />
     <MESSAGE value="完成post和manage全部功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成post和manage全部功能" />
+    <MESSAGE value="post和department 修复bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="post和department 修复bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="397" y="13" key="#Project_Structure" timestamp="1609334409379">
@@ -296,86 +352,86 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="254" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.1474.864@62.0.1474.864" timestamp="1609334621746" />
-    <state x="605" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1609591962702">
+    <state x="605" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1609599857332">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="605" y="116" key="#com.intellij.ide.util.MemberChooser/62.0.1474.864@62.0.1474.864" timestamp="1609591962702" />
+    <state x="605" y="116" key="#com.intellij.ide.util.MemberChooser/62.0.1474.864@62.0.1474.864" timestamp="1609599857332" />
     <state x="530" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609570534089">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="530" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864@62.0.1474.864" timestamp="1609570534089" />
-    <state width="1232" height="371" key="GridCell.Tab.0.bottom" timestamp="1609595662887">
+    <state width="1232" height="236" key="GridCell.Tab.0.bottom" timestamp="1609602834040">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609595662887" />
-    <state width="1232" height="371" key="GridCell.Tab.0.center" timestamp="1609595662887">
+    <state width="1232" height="236" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609602834040" />
+    <state width="1232" height="236" key="GridCell.Tab.0.center" timestamp="1609602834039">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1609595662886" />
-    <state width="1232" height="371" key="GridCell.Tab.0.left" timestamp="1609595662885">
+    <state width="1232" height="236" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1609602834039" />
+    <state width="1232" height="236" key="GridCell.Tab.0.left" timestamp="1609602834039">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1609595662885" />
-    <state width="1232" height="371" key="GridCell.Tab.0.right" timestamp="1609595662887">
+    <state width="1232" height="236" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1609602834039" />
+    <state width="1232" height="236" key="GridCell.Tab.0.right" timestamp="1609602834040">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1609595662887" />
-    <state width="1232" height="371" key="GridCell.Tab.1.bottom" timestamp="1609595662736">
+    <state width="1232" height="236" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1609602834040" />
+    <state width="1232" height="236" key="GridCell.Tab.1.bottom" timestamp="1609602833835">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.1.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609595662736" />
-    <state width="1232" height="371" key="GridCell.Tab.1.center" timestamp="1609595662736">
+    <state width="1232" height="236" key="GridCell.Tab.1.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609602833835" />
+    <state width="1232" height="236" key="GridCell.Tab.1.center" timestamp="1609602833835">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.1.center/62.0.1474.864@62.0.1474.864" timestamp="1609595662736" />
-    <state width="1232" height="371" key="GridCell.Tab.1.left" timestamp="1609595662736">
+    <state width="1232" height="236" key="GridCell.Tab.1.center/62.0.1474.864@62.0.1474.864" timestamp="1609602833835" />
+    <state width="1232" height="236" key="GridCell.Tab.1.left" timestamp="1609602833835">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.1.left/62.0.1474.864@62.0.1474.864" timestamp="1609595662736" />
-    <state width="1232" height="371" key="GridCell.Tab.1.right" timestamp="1609595662736">
+    <state width="1232" height="236" key="GridCell.Tab.1.left/62.0.1474.864@62.0.1474.864" timestamp="1609602833835" />
+    <state width="1232" height="236" key="GridCell.Tab.1.right" timestamp="1609602833835">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.1.right/62.0.1474.864@62.0.1474.864" timestamp="1609595662736" />
-    <state width="1232" height="371" key="GridCell.Tab.2.bottom" timestamp="1609595662737">
+    <state width="1232" height="236" key="GridCell.Tab.1.right/62.0.1474.864@62.0.1474.864" timestamp="1609602833835" />
+    <state width="1232" height="236" key="GridCell.Tab.2.bottom" timestamp="1609602833835">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.2.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609595662737" />
-    <state width="1232" height="371" key="GridCell.Tab.2.center" timestamp="1609595662737">
+    <state width="1232" height="236" key="GridCell.Tab.2.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609602833835" />
+    <state width="1232" height="236" key="GridCell.Tab.2.center" timestamp="1609602833835">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.2.center/62.0.1474.864@62.0.1474.864" timestamp="1609595662737" />
-    <state width="1232" height="371" key="GridCell.Tab.2.left" timestamp="1609595662737">
+    <state width="1232" height="236" key="GridCell.Tab.2.center/62.0.1474.864@62.0.1474.864" timestamp="1609602833835" />
+    <state width="1232" height="236" key="GridCell.Tab.2.left" timestamp="1609602833835">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.2.left/62.0.1474.864@62.0.1474.864" timestamp="1609595662737" />
-    <state width="1232" height="371" key="GridCell.Tab.2.right" timestamp="1609595662737">
+    <state width="1232" height="236" key="GridCell.Tab.2.left/62.0.1474.864@62.0.1474.864" timestamp="1609602833835" />
+    <state width="1232" height="236" key="GridCell.Tab.2.right" timestamp="1609602833835">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="371" key="GridCell.Tab.2.right/62.0.1474.864@62.0.1474.864" timestamp="1609595662737" />
-    <state width="1232" height="130" key="GridCell.Tab.3.bottom" timestamp="1609581352486">
+    <state width="1232" height="236" key="GridCell.Tab.2.right/62.0.1474.864@62.0.1474.864" timestamp="1609602833835" />
+    <state width="1232" height="236" key="GridCell.Tab.3.bottom" timestamp="1609602815669">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="130" key="GridCell.Tab.3.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609581352486" />
-    <state width="1232" height="130" key="GridCell.Tab.3.center" timestamp="1609581352486">
+    <state width="1232" height="236" key="GridCell.Tab.3.bottom/62.0.1474.864@62.0.1474.864" timestamp="1609602815669" />
+    <state width="1232" height="236" key="GridCell.Tab.3.center" timestamp="1609602815668">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="130" key="GridCell.Tab.3.center/62.0.1474.864@62.0.1474.864" timestamp="1609581352486" />
-    <state width="1232" height="130" key="GridCell.Tab.3.left" timestamp="1609581352485">
+    <state width="1232" height="236" key="GridCell.Tab.3.center/62.0.1474.864@62.0.1474.864" timestamp="1609602815668" />
+    <state width="1232" height="236" key="GridCell.Tab.3.left" timestamp="1609602815668">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="130" key="GridCell.Tab.3.left/62.0.1474.864@62.0.1474.864" timestamp="1609581352485" />
-    <state width="1232" height="130" key="GridCell.Tab.3.right" timestamp="1609581352486">
+    <state width="1232" height="236" key="GridCell.Tab.3.left/62.0.1474.864@62.0.1474.864" timestamp="1609602815668" />
+    <state width="1232" height="236" key="GridCell.Tab.3.right" timestamp="1609602815669">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1232" height="130" key="GridCell.Tab.3.right/62.0.1474.864@62.0.1474.864" timestamp="1609581352486" />
+    <state width="1232" height="236" key="GridCell.Tab.3.right/62.0.1474.864@62.0.1474.864" timestamp="1609602815669" />
     <state x="306" y="286" width="854" height="267" key="MultipleFileMergeDialog" timestamp="1609577110060">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="306" y="286" width="854" height="267" key="MultipleFileMergeDialog/62.0.1474.864@62.0.1474.864" timestamp="1609577110060" />
-    <state x="392" y="165" key="Vcs.Push.Dialog.v2" timestamp="1609592516846">
+    <state x="392" y="165" key="Vcs.Push.Dialog.v2" timestamp="1609596078228">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="392" y="165" key="Vcs.Push.Dialog.v2/62.0.1474.864@62.0.1474.864" timestamp="1609592516846" />
+    <state x="392" y="165" key="Vcs.Push.Dialog.v2/62.0.1474.864@62.0.1474.864" timestamp="1609596078228" />
     <state x="456" y="197" key="run.anything.popup" timestamp="1609383517900">
       <screen x="62" y="0" width="1474" height="864" />
     </state>

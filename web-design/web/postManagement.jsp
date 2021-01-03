@@ -184,8 +184,8 @@ function searchAction() {
 	} else {
 		console.log(rows[0].dnum);
 
-		window.location.href="departmentSearch.jsp?"+"" +
-				"dnameFromDep="+rows[0].dname
+		window.location.href="postSearch.jsp?"+"" +
+				"pnumFromPost="+rows[0].pnum
 		//dnameFromDep=row.dname
 		//Update();
 

@@ -33,4 +33,11 @@ public class staffServiceImpl implements staffService {
         st.update(s);
     }
 
+    @Override
+    public List<Staff1> getStaffByPostNum(String pnum) {
+        staffDao1 st=new staffDaoImpl();
+        return st.getstaffByPostNUm(pnum);
+
+    }
+
 }

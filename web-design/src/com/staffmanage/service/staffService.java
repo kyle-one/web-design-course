@@ -15,4 +15,6 @@ public interface staffService {
     List<Staff1> getStaffByINPD(String did, String dname, String id, String name);
 
     void update(Staff1 s);
+
+    List<Staff1> getStaffByPostNum(String pnum);
 }

@@ -29,7 +29,7 @@
 				<div class="form-group ">
 					<input type="text" class="form-control" id="idcardNo" name="idcardNo" placeholder="身份证号">
 				</div>
-				<button type="submit" class="btn btn-default">查找</button>
+				<a  href="javascript:;" onclick="Search()" class="btn btn-primary" style="font-size: 15px;"> 查找</a>
 				<a class="btn btn-primary" href="javascript:;" onclick="createAction()" style="font-size: 15px;">员工入职</a>
 			</form>
 

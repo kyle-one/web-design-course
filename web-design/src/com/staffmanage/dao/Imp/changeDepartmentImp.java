@@ -48,13 +48,13 @@ public class changeDepartmentImp implements changeDepartmentDao, departmentDao, 
                 sql=sql+" and did="+did;
             }
             if (dname!=null&&!dname.trim().isEmpty()){
-                sql=sql+" and dname="+dname;
+                sql=sql+" and dname='"+dname+"'";
             }
             if (sid!=null&&!sid.trim().isEmpty()){
                 sql=sql+" and id="+sid;
             }
             if (sname!=null&&!sname.trim().isEmpty()){
-                sql=sql+" and name="+sname;
+                sql=sql+" and name='"+sname+"'";
             }
 
             pstmt=conn.prepareStatement(sql);

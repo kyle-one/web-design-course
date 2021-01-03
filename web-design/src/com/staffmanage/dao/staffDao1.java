@@ -15,6 +15,8 @@ public interface staffDao1 {
 
     //员工离职中的员工查询
     List<Staff1> getstaffByPDIN(String did,String dname,String id,String name);
+    //按照岗位查询
+    List<Staff1> getstaffByPostNUm(String pnum);
 
     void update(Staff1 s);
 

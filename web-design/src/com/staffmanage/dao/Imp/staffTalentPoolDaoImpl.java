@@ -96,14 +96,18 @@ public class staffTalentPoolDaoImpl implements staffTalentPoolDao {
             String sql="select  *  from staffTalentPool where 1=1";
             int i=1;
             if (name!=null&&!name.trim().isEmpty()){
-                sql=sql+" and did=? ";
+                sql=sql+" and name=? ";
+            }
+            if (idcardNo!=null&&!idcardNo.trim().isEmpty()){
+                sql=sql+" and idcardNo=? ";
+            }
+            pstmt=conn.prepareStatement(sql);
+            if (name!=null&&!name.trim().isEmpty()){
                 pstmt.setString(i++, name);
             }
             if (idcardNo!=null&&!idcardNo.trim().isEmpty()){
-                sql=sql+" and id=? ";
                 pstmt.setString(i++, idcardNo);
             }
-            pstmt=conn.prepareStatement(sql);
             System.out.println(sql);
             rs=pstmt.executeQuery();
             while(rs.next())

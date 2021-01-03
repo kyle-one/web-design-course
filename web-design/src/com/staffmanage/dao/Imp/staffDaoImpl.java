@@ -247,6 +247,70 @@ public class staffDaoImpl implements staffDao1 {
     }
 
     @Override
+    public List<Staff1> getstaffByPostNUm(String pnum) {
+        Connection  conn=null;
+        PreparedStatement  pstmt=null;
+        ResultSet  rs=null;
+        List<Staff1>  s=new ArrayList<Staff1>();
+        try {
+            conn=DbUtils.getConnection();
+            System.out.println("conn:"+conn);
+
+            String sql="select  *  from staff where 1=1 and (del is null or del='0')";
+
+            if (pnum!=null&&!pnum.trim().isEmpty()){
+                sql=sql+" and pid=? ";
+            }
+
+            pstmt=conn.prepareStatement(sql);
+            if (pnum!=null&&!pnum.trim().isEmpty())
+                pstmt.setString(1, pnum);
+            System.out.println(sql+pnum);
+            rs=pstmt.executeQuery();
+            while(rs.next())
+            {
+                Staff1  s1=new Staff1();
+                s1.setId(rs.getString("id"));
+                s1.setSex(rs.getString("sex"));
+                s1.setBirthDate(rs.getString("birthDate"));
+                s1.setIdcardNo(rs.getString("idcardNo"));
+                s1.setSourceOfStaff(rs.getString("sourceOfStaff"));
+                s1.setPoliticCountenance(rs.getString("politicCountenance"));
+                s1.setFormOfEmployment(rs.getString("formOfEmployment"));
+                s1.setNation(rs.getString("nation"));
+                s1.setNativePlace(rs.getString("nativePlace"));
+                s1.setPhone(rs.getString("phone"));
+                s1.setEmail(rs.getString("email"));
+                s1.setHeight(rs.getString("height"));
+                s1.setName(rs.getString("name"));
+                s1.setMaritalStatus(rs.getString("maritalStatus"));
+                s1.setBirthPlace(rs.getString("birthPlace"));
+                s1.setHukou(rs.getString("Hukou"));
+                s1.setHighestEducation(rs.getString("highestEducation"));
+                s1.setHighestDegree(rs.getString("highestDegree"));
+                s1.setUniversity(rs.getString("university"));
+                s1.setMajors(rs.getString("majors"));
+                s1.setDateOfGraduation(rs.getString("dateOfGraduation"));
+                s1.setEntryDate(rs.getString("entryDate"));
+                s1.setWorkDate(rs.getString("workDate"));
+                s1.setBloodType(rs.getString("bloodType"));
+                s1.setPid(rs.getString("pid"));
+                s1.setDid(rs.getString("did"));
+                s.add(s1);
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally
+        {
+            DbUtils.closeResultSet(rs);
+            DbUtils.closeStatement(pstmt);
+            DbUtils.closeConnection();
+        }
+        return s;
+    }
+
+    @Override
     public void update(Staff1 s) {
         Connection  conn=null;
             PreparedStatement  pstmt=null;
