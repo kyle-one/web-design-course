@@ -205,7 +205,7 @@ function Search() {
 
 // 新增
 function createAction() {
-	window.location.href = "departmentManagementAdd.jsp";
+	window.location.href = "departmentManagementAdd.html";
 }
 
 
